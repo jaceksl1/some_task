@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Parleto Task</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="header">
+        <div class="header-wrapper-mobile">
+          <div class="mobile-nav-wrapper">
+            <div class="mobile-nav">
+              <div class="mobile-nav-top">
+                <button class="btn-mobile-nav-close">
+                  <i class="fa-solid fa-xmark fa-2xl"></i>
+                </button>
+              </div>
+              <ul class="items-wrapper">
+                <li class="item"><a href="#">Dashboard</a></li>
+                <li class="item"><a href="#">Reports</a></li>
+                <li class="item"><a href="#">Expenses</a></li>
+                <li class="item"><a href="#">Settings</a></li>
+              </ul>
+              <div class="panel-content-wrapper-mobile">
+                <div class="account-content">
+                  <a class="link login" href="#">
+                    <i class="fa-solid fa-lock fa-xl"></i>
+                    <span>Log out</span>
+                  </a>
+                  <a class="link register" href="#">
+                    <i class="fa-solid fa-user-plus fa-xl"></i>
+                    <span>Profile</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-wrapper">
+          <img class="logo" src="media/logo-parleto.png" alt="logo" />
+          <div class="nav-wrapper">
+            <nav>
+              <ul class="navigation">
+                <li class="item"><a href="#">Dashboard</a></li>
+                <li class="item"><a href="#">Reports</a></li>
+                <li class="item"><a href="#">Expenses</a></li>
+                <li class="item"><a href="#">Settings</a></li>
+              </ul>
+              <button class="btn-mobile-nav-open">
+                <i class="fa-solid fa-bars fa-lg"></i>
+              </button>
+            </nav>
+            <div class="user-panel-wrapper">
+              <button>Log out</button>
+              <button>Profile</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="main-content">
+        <h1>Expense Tracker</h1>
+        <div class="expenses-wrapper">
+          <div class="category-selector-wrapper">
+            <label for="category">Category</label>
+            <select id="category">
+              <option value="">All</option>
+              <option value="food">Food</option>
+              <option value="car">Car</option>
+            </select>
+          </div>
+          <div class="period-input-wrapper">
+            <label for="period">Period</label>
+            <input
+              type="text"
+              id="period"
+              placeholder="mm/dd/yyyy - mm/dd/yyyy"
+            />
+          </div>
+        </div>
+        <ul class="expense-list"></ul>
+        <div class="summary">
+          <div class="total-wrapper">
+            <div class="title">Total:</div>
+            <div class="amount">797 PLN</div>
+          </div>
+          <div class="title">
+            <h4>Period:</h4>
+          </div>
+          <div class="period-wrapper"></div>
+          <div class="title">
+            <h4>Expenses divided into categories:</h4>
+          </div>
+          <div class="category-total-wrapper"></div>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
