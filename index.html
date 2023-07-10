@@ -66,8 +66,14 @@
               </button>
             </nav>
             <div class="user-panel-wrapper">
-              <button>Log out</button>
-              <button>Profile</button>
+              <button>
+                <span>Log out</span>
+                <i class="fa-solid fa-lock fa-xl"></i>
+              </button>
+              <button>
+                <span>Profile</span>
+                <i class="fa-solid fa-user-plus fa-xl"></i>
+              </button>
             </div>
           </div>
         </div>
@@ -76,7 +82,7 @@
         <h1>Expense Tracker</h1>
         <div class="expenses-wrapper">
           <div class="category-selector-wrapper">
-            <label for="category">Category</label>
+            <label for="category">Select category</label>
             <select id="category">
               <option value="">All</option>
               <option value="food">Food</option>
@@ -84,12 +90,8 @@
             </select>
           </div>
           <div class="period-input-wrapper">
-            <label for="period">Period</label>
-            <input
-              type="text"
-              id="period"
-              placeholder="mm/dd/yyyy - mm/dd/yyyy"
-            />
+            <label for="period">Select period</label>
+            <input type="month" id="period" placeholder="7/2022" />
           </div>
         </div>
         <ul class="expense-list"></ul>
