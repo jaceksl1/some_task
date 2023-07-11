@@ -2,7 +2,6 @@ body {
   font-family: Catamaran, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url("media/image-background.jpg");
 }
 body .page-wrapper {
   max-width: 1200px;
@@ -103,8 +102,7 @@ body .page-wrapper .header .panel-wrapper .nav-wrapper .user-panel-wrapper butto
   visibility: visible;
 }
 body .page-wrapper .main-content {
-  padding: 20px;
-  background-color: #f5f5f5;
+  padding: 0 20px 20px;
 }
 body .page-wrapper .main-content .expenses-wrapper {
   display: flex;
@@ -141,36 +139,71 @@ body .page-wrapper .main-content .expenses-wrapper .period-input-wrapper input {
   border: none;
   font-size: 14px;
 }
-body .page-wrapper .main-content .expense-list {
+body .page-wrapper .main-content .expense-list-wrapper {
+  min-height: 358px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+body .page-wrapper .main-content .expense-list-wrapper .expense-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-body .page-wrapper .main-content .expense-list .expense-item {
+body .page-wrapper .main-content .expense-list-wrapper .expense-list .expense-item {
   background-color: #fff;
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 10px;
 }
-body .page-wrapper .main-content .expense-list .expense-item .info {
+body .page-wrapper .main-content .expense-list-wrapper .expense-list .expense-item .info {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5px;
 }
-body .page-wrapper .main-content .expense-list .expense-item .info .category,
-body .page-wrapper .main-content .expense-list .expense-item .info .date,
-body .page-wrapper .main-content .expense-list .expense-item .info .name,
-body .page-wrapper .main-content .expense-list .expense-item .info .amount {
+body .page-wrapper .main-content .expense-list-wrapper .expense-list .expense-item .info .category,
+body .page-wrapper .main-content .expense-list-wrapper .expense-list .expense-item .info .date,
+body .page-wrapper .main-content .expense-list-wrapper .expense-list .expense-item .info .name,
+body .page-wrapper .main-content .expense-list-wrapper .expense-list .expense-item .info .amount {
   font-weight: 500;
-  color: #616161;
   width: 25%;
 }
-body .page-wrapper .main-content .expense-list .expense-item .info .amount {
+body .page-wrapper .main-content .expense-list-wrapper .expense-list .expense-item .info .amount {
   font-weight: bold;
 }
-body .page-wrapper .main-content .expense-list .expense-item .info .date {
+body .page-wrapper .main-content .expense-list-wrapper .expense-list .expense-item .info .date {
   text-align: right;
+}
+body .page-wrapper .main-content .expense-list-wrapper .expense-list .expense-item.hidden {
+  display: none;
+}
+body .page-wrapper .main-content .pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .page-wrapper .main-content .pagination-container .pagination-number,
+body .page-wrapper .main-content .pagination-container .pagination-button {
+  font-size: 1.1rem;
+  background-color: transparent;
+  border: none;
+  margin: 0.25rem 0.25rem;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 0.2rem;
+}
+body .page-wrapper .main-content .pagination-container .pagination-number .pagination-number:hover,
+body .page-wrapper .main-content .pagination-container .pagination-button .pagination-number:hover,
+body .page-wrapper .main-content .pagination-container .pagination-number .pagination-button:not(.disabled):hover,
+body .page-wrapper .main-content .pagination-container .pagination-button .pagination-button:not(.disabled):hover {
+  background: #fff;
+}
+body .page-wrapper .main-content .pagination-container .pagination-number .pagination-number.active,
+body .page-wrapper .main-content .pagination-container .pagination-button .pagination-number.active {
+  color: #fff;
+  background: #0085b6;
 }
 body .page-wrapper .main-content .summary {
   margin-top: 20px;
@@ -183,14 +216,53 @@ body .page-wrapper .main-content .summary .total-wrapper .total {
   font-weight: bold;
   margin-bottom: 10px;
 }
+body .page-wrapper .main-content .summary .period-wrapper {
+  position: relative;
+}
+body .page-wrapper .main-content .summary .period-wrapper .period {
+  color: #fff;
+}
+body .page-wrapper .main-content .summary .period-wrapper .period::before {
+  content: "";
+  background-color: #000;
+  width: calc(100% + 20px);
+  opacity: 0.6;
+  height: 1.6rem;
+  position: absolute;
+  top: 0;
+  left: -10px;
+  z-index: -1;
+}
 body .page-wrapper .main-content .summary .category-total,
 body .page-wrapper .main-content .summary .period {
   display: flex;
   justify-content: space-between;
+  z-index: 10;
+  position: relative;
 }
-body .page-wrapper .main-content .summary .category-total .category,
-body .page-wrapper .main-content .summary .period .category {
+body .page-wrapper .main-content .summary .category-total {
   color: #616161;
+}
+body .page-wrapper .main-content .summary .category-total::before {
+  content: "";
+  background-color: #fff;
+  width: 100%;
+  opacity: 0.6;
+  height: 1.5rem;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+body .page-wrapper .image-section-bottom {
+  position: relative;
+}
+body .page-wrapper .image-section-bottom .img-bottom {
+  position: absolute;
+  top: -90px;
+  opacity: 0.7;
+  z-index: -1;
+  max-width: 100%;
+  border-radius: 150px 20px 150px 20px;
 }
 @media (max-width: 768px) {
   body .page-wrapper.gray {

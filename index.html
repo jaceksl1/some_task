@@ -94,7 +94,30 @@
             <input type="month" id="period" placeholder="7/2022" />
           </div>
         </div>
-        <ul class="expense-list"></ul>
+        <div class="expense-list-wrapper">
+          <ul class="expense-list" id="paginated-list" aria-live="polite"></ul>
+          <div class="pagination-container">
+            <button
+              class="pagination-button"
+              id="prev-button"
+              title="Previous page"
+              aria-label="Previous page"
+            >
+              &lt;
+            </button>
+
+            <div id="pagination-numbers"></div>
+
+            <button
+              class="pagination-button"
+              id="next-button"
+              title="Next page"
+              aria-label="Next page"
+            >
+              &gt;
+            </button>
+          </div>
+        </div>
         <div class="summary">
           <div class="total-wrapper">
             <div class="title">Total:</div>
@@ -109,6 +132,9 @@
           </div>
           <div class="category-total-wrapper"></div>
         </div>
+      </div>
+      <div class="image-section-bottom">
+        <img class="img-bottom" src="media/image-background.jpg" alt="img" />
       </div>
     </div>
     <script src="js/script.js"></script>
