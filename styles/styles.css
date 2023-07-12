@@ -123,14 +123,17 @@ body .page-wrapper .main-content .expenses-wrapper .period-input-wrapper label {
 }
 body .page-wrapper .main-content .expenses-wrapper .category-selector-wrapper select,
 body .page-wrapper .main-content .expenses-wrapper .period-input-wrapper select {
-  min-width: 60%;
+  min-width: 70%;
   height: 40px;
   border: none;
   font-size: 14px;
+  background: transparent;
+  border: 2px solid #000;
+  border-radius: 5px;
 }
 body .page-wrapper .main-content .expenses-wrapper .category-selector-wrapper select:focus-visible,
 body .page-wrapper .main-content .expenses-wrapper .period-input-wrapper select:focus-visible {
-  border: none;
+  border: 2px solid #000;
 }
 body .page-wrapper .main-content .expenses-wrapper .category-selector-wrapper input,
 body .page-wrapper .main-content .expenses-wrapper .period-input-wrapper input {
@@ -138,6 +141,9 @@ body .page-wrapper .main-content .expenses-wrapper .period-input-wrapper input {
   height: 40px;
   border: none;
   font-size: 14px;
+  background: transparent;
+  border: 2px solid #000;
+  border-radius: 5px;
 }
 body .page-wrapper .main-content .expense-list-wrapper {
   min-height: 358px;
@@ -155,6 +161,7 @@ body .page-wrapper .main-content .expense-list-wrapper .expense-list .expense-it
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 10px;
+  border-bottom: 1px solid #616161;
 }
 body .page-wrapper .main-content .expense-list-wrapper .expense-list .expense-item .info {
   display: flex;
@@ -194,16 +201,23 @@ body .page-wrapper .main-content .pagination-container .pagination-button {
   width: 2.5rem;
   border-radius: 0.2rem;
 }
-body .page-wrapper .main-content .pagination-container .pagination-number .pagination-number:hover,
-body .page-wrapper .main-content .pagination-container .pagination-button .pagination-number:hover,
-body .page-wrapper .main-content .pagination-container .pagination-number .pagination-button:not(.disabled):hover,
-body .page-wrapper .main-content .pagination-container .pagination-button .pagination-button:not(.disabled):hover {
-  background: #fff;
+body .page-wrapper .main-content .pagination-container .pagination-number:hover,
+body .page-wrapper .main-content .pagination-container .pagination-button:hover {
+  transition-duration: 0.5s;
+  background-color: #00ddc2;
+  border-radius: 10px 0;
 }
-body .page-wrapper .main-content .pagination-container .pagination-number .pagination-number.active,
-body .page-wrapper .main-content .pagination-container .pagination-button .pagination-number.active {
+body .page-wrapper .main-content .pagination-container .pagination-number.active,
+body .page-wrapper .main-content .pagination-container .pagination-button.active {
+  background-color: #000;
   color: #fff;
-  background: #0085b6;
+  border-radius: 10px 0;
+}
+body .page-wrapper .main-content .pagination-container .pagination-number.disabled:hover,
+body .page-wrapper .main-content .pagination-container .pagination-button.disabled:hover,
+body .page-wrapper .main-content .pagination-container .pagination-number.disabled:active,
+body .page-wrapper .main-content .pagination-container .pagination-button.disabled:active {
+  background-color: transparent;
 }
 body .page-wrapper .main-content .summary {
   margin-top: 20px;
